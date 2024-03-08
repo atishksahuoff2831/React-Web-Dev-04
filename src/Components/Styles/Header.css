@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+.HeadNav{
+    background-color: rgb(55, 0, 75);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.HDNAME{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.HDH1{
+    text-align: center;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
+    color: white;
+}
