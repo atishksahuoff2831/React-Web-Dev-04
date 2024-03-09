@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.ViewContainer{
+    margin: 140px 0 auto;
+}
+.productCard{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.PABTDIV{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.DCLRBOX{
+    display: flex;
+}
+.IDCLRBOX{
+    display: flex;
+    margin: 5px;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+}
+.CLRBOX{
+    height: 20px; 
+    width: 20px;
+    border-radius:10px;
+    cursor: pointer;
+    border: 2px solid white;
+}

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.Container{
+    margin: 140px 0 auto;
+}
+.MaleFullShirt{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 30px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.H2{
+    margin: 20px;
+}
+.MaleFullShirt::-webkit-scrollbar {
+    display: none;
+}
+.MFSCard{
+    border: 2px solid white;
+    margin: 10px;
+    border-radius: 20px;
+}
+.CDTL{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.DTL{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.VIEW{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.VW{
+    text-decoration: none;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border: 2px solid white;
+    margin: 10px;
+    padding: 10px;
+}

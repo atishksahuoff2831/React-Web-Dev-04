@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 150px 30px 30px 30px;
 }
 .ABTH1{
     font-family: "Pacifico", cursive;
@@ -17,6 +18,11 @@
     align-items: center;
     margin: 30px;
 }
+.ABTDIV2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .ABP{
     text-align: center;
     padding: 10px;
@@ -30,7 +36,6 @@
 .AuthP{
     margin: 30px;
     text-align: justify;
-    width: 500px;
 }
 @media only screen and (max-width: 425px){
     .ABTH1{
