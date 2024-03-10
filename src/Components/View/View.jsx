@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ProductMale from '../ProductArray/ManArray';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import '../Styles/View.css';
 const View = () => {
     const { id } = useParams();
@@ -39,6 +41,12 @@ const View = () => {
                                             <option key={index} value={size}>{size}</option>
                                         ))}
                                     </select>
+                                </div>
+                                <div className="CartBuy">
+                                    <Link to="/Cart" className="Buy">
+                                        Buy
+                                        <FontAwesomeIcon icon={faShoppingCart} size="xl" style={{ color: "#ffffff" }} />
+                                    </Link>
                                 </div>
                             </div>
                         </div>

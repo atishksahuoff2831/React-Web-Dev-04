@@ -1,0 +1,7 @@
+.CartW{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 140px 20px auto;
+}
