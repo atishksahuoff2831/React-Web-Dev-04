@@ -19,7 +19,7 @@
 }
 .IDCLRBOX{
     display: flex;
-    margin: 5px;
+    margin-left: 5px;
     justify-content: space-around;
     align-items: center;
     width: 200px;
@@ -30,4 +30,18 @@
     border-radius:10px;
     cursor: pointer;
     border: 2px solid white;
+}
+.SelectDiv{
+    margin-top: 9px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.SelectP{
+    margin-left: 9px;
+    outline: none;
+    border: none;
+    width: 50px;
+    padding: 3px;
 }

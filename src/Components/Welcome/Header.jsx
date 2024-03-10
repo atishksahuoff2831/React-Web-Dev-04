@@ -20,7 +20,7 @@ const Header = () => {
                         </div>
                     )
                 }
-                {(Location.pathname === "/Male" || Location.pathname === "/View") && (
+                {(Location.pathname === "/Male" || Location.pathname.startsWith("/View")) && (
                     <div className="CARTLINKS">
                         <Link to="/Cart" className="CART">
                             <FontAwesomeIcon icon={faShoppingCart} size="xl" style={{ color: "#ffffff" }} />

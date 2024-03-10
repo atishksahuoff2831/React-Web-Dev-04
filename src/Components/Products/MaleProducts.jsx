@@ -23,11 +23,50 @@ const MaleProducts = () => {
                         ))}
                 </div>
             </div>
+
+            <div className="Container1">
+                <h2 className="DTL H2">Men's Full Length Jeans</h2>
+                <div className="MaleFullShirt">
+                    {
+                        ProductMale.filter(item => item.id.startsWith("Jeans")).map(MFS => (
+                            <div key={MFS.id} className="MFSCard">
+                                <img src={MFS.img} alt={MFS.name} width="200px" height="250px" style={{ "borderRadius": "20px", "padding": "10px","objectFit":"cover" }} />
+                                <div className="CDTL">
+                                    <h4 className="DTL">{MFS.name}</h4>
+                                    <h4 className="DTL">{MFS.price} /-</h4>
+                                </div>
+                                <div className="VIEW">
+                                    <Link to={`/View/${MFS.id}`} className="VW">View</Link>
+                                </div>
+                            </div>
+                        ))}
+                </div>
+            </div>
+
             <div className="Container1">
                 <h2 className="DTL H2">Men's Half Shirt</h2>
                 <div className="MaleFullShirt">
                     {
                         ProductMale.filter(item => item.id.startsWith("HalfShirt")).map(MFS => (
+                            <div key={MFS.id} className="MFSCard">
+                                <img src={MFS.img} alt={MFS.name} width="200px" height="250px" style={{ "borderRadius": "20px", "padding": "10px","objectFit":"cover" }} />
+                                <div className="CDTL">
+                                    <h4 className="DTL">{MFS.name}</h4>
+                                    <h4 className="DTL">{MFS.price} /-</h4>
+                                </div>
+                                <div className="VIEW">
+                                    <Link to={`/View/${MFS.id}`} className="VW">View</Link>
+                                </div>
+                            </div>
+                        ))}
+                </div>
+            </div>
+           
+            <div className="Container1">
+                <h2 className="DTL H2">Men's Short Pants</h2>
+                <div className="MaleFullShirt">
+                    {
+                        ProductMale.filter(item => item.id.startsWith("pant")).map(MFS => (
                             <div key={MFS.id} className="MFSCard">
                                 <img src={MFS.img} alt={MFS.name} width="200px" height="250px" style={{ "borderRadius": "20px", "padding": "10px","objectFit":"cover" }} />
                                 <div className="CDTL">
