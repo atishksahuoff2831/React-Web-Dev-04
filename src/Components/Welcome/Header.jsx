@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import "../Styles/Header.css";
 import { useLocation, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBagShopping, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import CartContext from "../Context/CartContext";
 const Header = () => {
     const Location = useLocation();
+    const DressCtx = useContext(CartContext);
+    const [cartQuantity, SetCartQuantity] = useState(0);
+    const updateCartQuantity = useCallback(() => {
+        const TotalQuantity = DressCtx.DressCart.reduce((total, item) => total + item.quantity,0);
+        SetCartQuantity(TotalQuantity);
+    },[DressCtx.DressCart]);
+    useEffect(()=>{
+        updateCartQuantity();
+    },[DressCtx.DressCart, updateCartQuantity]);
     return (
         <>
             <div className="HeadNav">
@@ -20,11 +30,11 @@ const Header = () => {
                         </div>
                     )
                 }
-                {(Location.pathname === "/Male" || Location.pathname.startsWith("/View")) && (
+                {(Location.pathname === "/Male" || Location.pathname === "/Cart" || Location.pathname.startsWith("/View")) && (
                     <div className="CARTLINKS">
                         <Link to="/Cart" className="CART">
                             <FontAwesomeIcon icon={faShoppingCart} size="xl" style={{ color: "#ffffff" }} />
-                            <p>0</p>
+                            <p>{cartQuantity}</p>
                         </Link>
                     </div>
                 )}
