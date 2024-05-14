@@ -1,60 +1,43 @@
-import React from "react";
-import { app } from "../Database/Firebase";
-import { getAuth, signOut } from "firebase/auth";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useCallback, useContext, useEffect, useState } from "react";
+import "../Styles/Header.css";
+import { useLocation, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInbox, faPen, faStar, faPaperPlane, faTrash, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import '../Styles/Header.css';
+import { faBagShopping, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import CartContext from "../Context/CartContext";
 const Header = () => {
-    const navigate = useNavigate();
-    const HandleLogOut = () => {
-        const AUTH = getAuth(app);
-        signOut(AUTH).then(() => {
-            localStorage.removeItem("UserMail");
-            navigate("/");
-        }).catch(error => {
-            console.log(error.message);
-        });
-    }
+    const Location = useLocation();
+    const DressCtx = useContext(CartContext);
+    const [cartQuantity, SetCartQuantity] = useState(0);
+    const updateCartQuantity = useCallback(() => {
+        const TotalQuantity = DressCtx.DressCart.reduce((total, item) => total + item.quantity,0);
+        SetCartQuantity(TotalQuantity);
+    },[DressCtx.DressCart]);
+    useEffect(()=>{
+        updateCartQuantity();
+    },[DressCtx.DressCart, updateCartQuantity]);
     return (
         <>
-            <div className="Header-Nav">
-                <div className="Ldiv">
-                    <Link to="/MailBox/Compose" className="LB">
-                        <p>Mail</p>
-                        <FontAwesomeIcon icon={faPen} size="sm" style={{ color: "#ffffff", }} />
-                    </Link>
+            <div className="HeadNav">
+                <div className="HDNAME">
+                    <h1 className="HDH1">TrendBlendz </h1>
                 </div>
-                <div className="Ldiv">
-                    <Link to="/MailBox/Inbox" className="LB">
-                        <p>Inbox</p>
-                        <FontAwesomeIcon icon={faInbox} size="sm" style={{ color: "#ffffff", }} />
-                    </Link>
-                </div>
-                <div className="Ldiv">
-                    <Link to="/MailBox/Starred" className="LB">
-                        <p>Starred</p>
-                        <FontAwesomeIcon icon={faStar} size="sm" style={{ color: "#ffffff", }} />
-                    </Link>
-                </div>
-                <div className="Ldiv">
-                    <Link to="/MailBox/Sent" className="LB">
-                        <p>Sent</p>
-                        <FontAwesomeIcon icon={faPaperPlane} size="sm" style={{ color: "#ffffff", }} />
-                    </Link>
-                </div>
-                <div className="Ldiv">
-                    <Link to="/MailBox/Trash" className="LB">
-                        <p>Trash</p>
-                        <FontAwesomeIcon icon={faTrash} size="sm" style={{ color: "#ffffff", }} />
-                    </Link>
-                </div>
-                <div className="Ldiv">
-                    <Link onClick={HandleLogOut} className="LB">
-                        <p>Logout</p>
-                        <FontAwesomeIcon icon={faRightFromBracket} size="sm" style={{ color: "#ffffff", }} />
-                    </Link>
-                </div>
+                {
+                    Location.pathname === "/About" && (
+                        <div className="HDLINKS">
+                            <Link to="/Male" className="BTN Male">
+                                <FontAwesomeIcon icon={faBagShopping} size="lg" style={{ color: "#ffffff", }} />
+                            </Link>
+                        </div>
+                    )
+                }
+                {(Location.pathname === "/Male" || Location.pathname === "/Cart" || Location.pathname.startsWith("/View")) && (
+                    <div className="CARTLINKS">
+                        <Link to="/Cart" className="CART">
+                            <FontAwesomeIcon icon={faShoppingCart} size="xl" style={{ color: "#ffffff" }} />
+                            <p>{cartQuantity}</p>
+                        </Link>
+                    </div>
+                )}
             </div>
         </>
     );

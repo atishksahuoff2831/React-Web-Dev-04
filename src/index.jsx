@@ -2,14 +2,13 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import { Provider } from 'react-redux';
-import { store } from './ReduxTK/Store';
+import CartProvider from './Components/Context/CartProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <Provider store={store}>
+    <CartProvider>
         <BrowserRouter>
             <App />
         </BrowserRouter>
-    </Provider>
+    </CartProvider>
 );

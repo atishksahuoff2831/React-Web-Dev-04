@@ -1,38 +1,66 @@
-.Header-Nav{
-    border: 2px solid white;
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+.HeadNav{
+    background-color: rgb(42, 0, 62);
+    margin: 0;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    flex-direction: column;
-    margin: 30px 10px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(85, 0, 85);
-    height: auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
-.Ldiv{
-    margin: 7px;
+.HDNAME{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.LB{
+.HDH1{
+    text-align: center;
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
+    color: white;
+}
+.HDLINKS{
+    width: 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+}
+.BTN{
     border: 2px solid white;
+    padding: 5px;
     border-radius: 10px;
-    margin-bottom: 40px;
-    width: 80px;
-    height: 40px;
+    margin: 5px;
+    width: 90px;
+    text-align: center;
+}
+.Male{
+    background-color: rgb(106, 0, 0);
+}
+.CART{
     text-decoration: none;
     color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 2px solid white;
+    width: 90px;
+    border-radius: 20px;
+    background-color: rgb(0, 90, 70);
 }
-@media screen and (width<= 770px) {
-    .Header-Nav{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        margin: 10px;
-    }
-    .LB{
-        margin: 10px;
+@media screen and (max-width: 425px){
+    .HDH1{
+        font-size: 30px;
     }
 }
